@@ -273,6 +273,30 @@ h1 em,h2 em {
   position:relative;
   overflow:hidden;
   background:#e1d7c8;
+  border-radius:6px;
+}
+.image-note,
+.specialty-number,
+.gallery-grid figcaption,
+.reviews-photo figcaption {
+  z-index:3;
+}
+.image-frame::before {
+  content:"";
+  position:absolute;
+  z-index:2;
+  inset:12px;
+  pointer-events:none;
+  opacity:.78;
+  background:
+    linear-gradient(var(--terra),var(--terra)) left top / 25px 1px no-repeat,
+    linear-gradient(var(--terra),var(--terra)) left top / 1px 25px no-repeat,
+    linear-gradient(var(--terra),var(--terra)) right top / 25px 1px no-repeat,
+    linear-gradient(var(--terra),var(--terra)) right top / 1px 25px no-repeat,
+    linear-gradient(var(--terra),var(--terra)) left bottom / 25px 1px no-repeat,
+    linear-gradient(var(--terra),var(--terra)) left bottom / 1px 25px no-repeat,
+    linear-gradient(var(--terra),var(--terra)) right bottom / 25px 1px no-repeat,
+    linear-gradient(var(--terra),var(--terra)) right bottom / 1px 25px no-repeat;
 }
 .hero-image {
   height:min(550px,49vw);
