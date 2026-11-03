@@ -11,6 +11,15 @@
   <meta property="og:site_name" content="La Plaza Zaratán">
   <meta property="og:locale" content="es_ES">
   <title>La Plaza Zaratán Bar en Zaratán, Valladolid</title>
+  <script>
+    try {
+      if (localStorage.getItem("plaza-zaratan-theme") === "dark") {
+        document.documentElement.dataset.theme = "dark";
+        const themeColor = document.querySelector('meta[name="theme-color"]');
+        if (themeColor) themeColor.content = "#1d221e";
+      }
+    } catch {}
+  </script>
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +33,7 @@
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="site-header">
     <a class="brand" href="#inicio" aria-label="La Plaza Zaratán, inicio"><span class="brand-mark" aria-hidden="true">P</span><span>La Plaza <small>ZARATÁN</small></span></a>
+    <button class="theme-toggle" type="button" aria-label="Activar modo oscuro" aria-pressed="false" title="Activar modo oscuro"><span aria-hidden="true">&#9790;</span></button>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span class="menu-icon" aria-hidden="true"></span><span class="sr-only">Abrir menú</span></button>
     <nav id="primary-nav" class="primary-nav" aria-label="Navegación principal">
       <a href="#inicio">Inicio</a><a href="#propuesta">Nuestra propuesta</a><a href="#carta">Carta</a><a href="#opiniones">Opiniones</a><a href="#contacto">Contacto</a>

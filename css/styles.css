@@ -10,6 +10,16 @@
   --sans:'DM Sans',Arial,sans-serif;
   --content:1240px;
 }
+:root[data-theme="dark"] {
+  color-scheme:dark;
+  --cream:#1d221e;
+  --paper:#292f29;
+  --olive:#121812;
+  --ink:#f0ede5;
+  --terra:#b96848;
+  --muted:#c2beb3;
+  --line:#454b43;
+}
 * {
   box-sizing:border-box;
 }
@@ -142,6 +152,27 @@ a {
   padding:0 17px;
   font-size:11px;
   gap:14px;
+}
+.theme-toggle {
+  width:42px;
+  height:42px;
+  flex:0 0 42px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--line);
+  border-radius:50%;
+  background:transparent;
+  color:var(--ink);
+  cursor:pointer;
+  font:20px/1 var(--sans);
+  transition:background .2s,color .2s,border-color .2s;
+}
+.theme-toggle:hover {
+  background:var(--paper);
+  border-color:var(--terra);
+}
+.theme-toggle span {
+  line-height:1;
 }
 .menu-toggle {
   display:none;
@@ -1368,3 +1399,60 @@ h1 em,h2 em {
   text-align:center;
 }
 
+
+:root[data-theme="dark"] .primary-nav>a:not(.button) {
+  color:var(--ink);
+}
+:root[data-theme="dark"] .hero-intro,
+:root[data-theme="dark"] .intro-copy>p:not(.eyebrow) {
+  color:#d0d0c7;
+}
+:root[data-theme="dark"] .intro,
+:root[data-theme="dark"] .contact,
+:root[data-theme="dark"] .reviews {
+  background:var(--paper);
+}
+:root[data-theme="dark"] .map-card {
+  background:#252b25;
+}
+:root[data-theme="dark"] .map-art {
+  background-color:#303830;
+  background-image:linear-gradient(31deg,transparent 46%,#586057 47%,#586057 50%,transparent 51%),linear-gradient(118deg,transparent 43%,#364239 44%,#364239 58%,transparent 59%),linear-gradient(90deg,transparent 30%,rgba(89,96,85,.8) 31%,rgba(89,96,85,.8) 33%,transparent 34%),linear-gradient(0deg,transparent 68%,rgba(89,96,85,.8) 69%,rgba(89,96,85,.8) 71%,transparent 72%);
+}
+:root[data-theme="dark"] .map-street {
+  background:#646a60;
+}
+:root[data-theme="dark"] .map-block {
+  background:#39463c;
+}
+:root[data-theme="dark"] .block-two,
+:root[data-theme="dark"] .block-three {
+  background:#48413a;
+}
+:root[data-theme="dark"] .button-light {
+  background:#f2eee4;
+  color:#253025;
+}
+:root[data-theme="dark"] .button-light:hover {
+  background:#fffaf0;
+}
+:root[data-theme="dark"] .reviews-photo {
+  background:#303830;
+}
+:root[data-theme="dark"] .review-topics li {
+  border-color:#66675d;
+  color:#e2ded4;
+}
+:root[data-theme="dark"] .menu-card-description,
+:root[data-theme="dark"] .menu-price-line {
+  color:#deddd4;
+}
+:root[data-theme="dark"] .visit {
+  color:#fff4e8;
+}
+:root[data-theme="dark"] .score-number {
+  color:#f0ede5;
+}
+:root[data-theme="dark"] .map-pin {
+  color:#fff;
+}

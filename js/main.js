@@ -260,6 +260,32 @@
     });
   }
 
+  const themeToggle = document.querySelector(".theme-toggle");
+  if (themeToggle) {
+    const root = document.documentElement;
+    const themeIcon = themeToggle.querySelector("span[aria-hidden=\"true\"]");
+    const syncThemeControl = () => {
+      const dark = root.dataset.theme === "dark";
+      const label = dark ? "Activar modo claro" : "Activar modo oscuro";
+      themeToggle.setAttribute("aria-pressed", String(dark));
+      themeToggle.setAttribute("aria-label", label);
+      themeToggle.title = label;
+      if (themeIcon) themeIcon.textContent = dark ? "\u2600" : "\u263e";
+      const themeColor = document.querySelector('meta[name="theme-color"]');
+      if (themeColor) themeColor.content = dark ? "#1d221e" : "#f7f3ec";
+    };
+    syncThemeControl();
+    themeToggle.addEventListener("click", () => {
+      const dark = root.dataset.theme !== "dark";
+      if (dark) root.dataset.theme = "dark";
+      else delete root.dataset.theme;
+      try {
+        localStorage.setItem("plaza-zaratan-theme", dark ? "dark" : "light");
+      } catch {}
+      syncThemeControl();
+    });
+  }
+
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector("#primary-nav");
   if (toggle && nav) {
