@@ -1385,3 +1385,19 @@ h1 em,h2 em {
   font-size:12px;
   text-align:center;
 }
+
+.review-invite {
+  max-width:450px;
+  margin:20px 0 12px;
+  color:var(--muted);
+  font-size:14px;
+}
+.review-actions {
+  display:flex;
+  align-items:center;
+  gap:10px 22px;
+  flex-wrap:wrap;
+}
+.review-actions .underline-link {
+  margin-top:0;
+}
