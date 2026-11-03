@@ -149,27 +149,7 @@
         .filter((item) => item.category === category)
         .forEach((item) => {
           const card = document.createElement("article");
-          card.className = item.image ? "menu-card has-image" : "menu-card no-image";
-
-          if (item.image) {
-            const media = document.createElement("div");
-            media.className = "menu-card-media";
-
-            const image = document.createElement("img");
-            image.src = item.image;
-            image.alt = item.imageAlt || `Imagen de referencia: ${item.name}`;
-            image.loading = "lazy";
-            image.decoding = "async";
-            image.width = item.imageWidth || 800;
-            image.height = item.imageHeight || 600;
-            image.addEventListener("error", () => media.remove(), { once: true });
-
-            const badge = document.createElement("span");
-            badge.className = "menu-image-badge";
-            badge.textContent = "Imagen de referencia";
-            media.append(image, badge);
-            card.append(media);
-          }
+          card.className = "menu-card";
 
           const body = document.createElement("div");
           body.className = "menu-card-body";

@@ -1131,24 +1131,6 @@ h1 em,h2 em {
   display:flex;
   flex-direction:column;
 }
-.menu-card-media {
-  height:145px;
-  position:relative;
-  background:#4b5548;
-}
-.menu-card-media img {
-  object-fit:cover;
-}
-.menu-image-badge {
-  position:absolute;
-  left:9px;
-  bottom:9px;
-  padding:4px 7px;
-  background:rgba(36,35,31,.78);
-  color:#fff;
-  font-size:10px;
-  letter-spacing:.03em;
-}
 .menu-card-body {
   display:flex;
   flex:1;
@@ -1207,16 +1189,7 @@ h1 em,h2 em {
     grid-template-columns:1fr;
   }
   .menu-card {
-    display:grid;
-    grid-template-columns:105px 1fr;
-    min-height:120px;
-  }
-  .menu-card.no-image {
-    grid-template-columns:1fr;
-  }
-  .menu-card-media {
-    height:100%;
-    min-height:120px;
+    min-height:0;
   }
   .menu-card-body {
     padding:12px;
